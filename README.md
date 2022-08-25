@@ -102,11 +102,15 @@ In one terminal, source the setup file and then run a C++ `talker`:
 source /opt/ros/humble/setup.bash
 ros2 run demo_nodes_cpp talker
 ```
+![1](https://user-images.githubusercontent.com/90250848/186642018-3bcb1680-36c1-44d3-a03d-f2539fe87448.PNG)
+
 
 In another terminal source the setup file and then run a Python `listener`:
 ```
 source /opt/ros/humble/setup.bash
 ros2 run demo_nodes_py listener
 ```
+![2](https://user-images.githubusercontent.com/90250848/186641972-06d617fc-426a-4bc9-b0c0-2e1d7f8956c0.PNG)
+
 
 You should see the `talker` saying that it’s `Publishing` messages and the `listener` saying `I heard` those messages. This verifies both the C++ and Python APIs are working properly
