@@ -4,7 +4,7 @@ Installing ROS 2 Humble Hawksbill desktop on Ubuntu 22.04 LTS
 The Robot Operating System (ROS) is an open-source framework that helps researchers and developers build and reuse code between robotics applications. ROS is also a global open-source community of engineers, developers and hobbyists who contribute to making robots better, more accessible and available to everyone
 
 ## Installing 
-In Ubuntu oprating open the and strt to Install the follwing 
+In Ubuntu oprating open the command line and start to Install the follwing 
 
 ### Set locale
 ```
