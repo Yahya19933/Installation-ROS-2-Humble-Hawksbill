@@ -64,19 +64,49 @@ echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/ros-a
 
 
 
-### Setup Sources
+### Install ROS 2 packages
+Update your apt repository caches after setting up the repositories
 ```
-sudo apt update && sudo apt install locales
+sudo apt update
 ```
+
+ROS 2 packages are built on frequently updated Ubuntu systems. It is always recommended that you ensure your system is up to date before installing new packages
 ```
-sudo locale-gen en_US en_US.UTF-8
+sudo apt upgrade
 ```
+
+Desktop Install (Recommended): ROS, RViz, demos, tutorials
 ```
-sudo update-locale LC_ALL=en_US.UTF-8 LANG=en_US.UTF-8
+sudo apt install ros-humble-desktop
 ```
+
+ROS-Base Install (Bare Bones): Communication libraries, message packages, command line tools. No GUI tools
 ```
-export LANG=en_US.UTF-8
+sudo apt install ros-humble-ros-base
 ```
+
+
+### Environment setup
+#### Sourcing the setup script
+Set up your environment by sourcing the following file
 ```
-locale
+source /opt/ros/humble/setup.bash
 ```
+
+#### Try some examples
+##### Talker-listener
+If you installed ros-humble-desktop above you can try some examples
+
+In one terminal, source the setup file and then run a C++ `talker`:
+```
+source /opt/ros/humble/setup.bash
+ros2 run demo_nodes_cpp talker
+```
+
+In another terminal source the setup file and then run a Python `listener`:
+```
+source /opt/ros/humble/setup.bash
+ros2 run demo_nodes_py listener
+```
+
+You should see the `talker` saying that it’s `Publishing` messages and the `listener` saying `I heard` those messages. This verifies both the C++ and Python APIs are working properly
