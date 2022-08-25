@@ -4,9 +4,10 @@ Installing ROS 2 Humble Hawksbill desktop on Ubuntu 22.04 LTS
 The Robot Operating System (ROS) is an open-source framework that helps researchers and developers build and reuse code between robotics applications. ROS is also a global open-source community of engineers, developers and hobbyists who contribute to making robots better, more accessible and available to everyone
 
 ## Installing 
-In Ubuntu oprating open the command line and start to Install the follwing 
+In Ubuntu oprating system open the command line (Terminal) and start to Install the follwing 
 
 ### Set locale
+Make sure you have a locale which supports `UTF-8`. If you are in a minimal environment (such as a docker container), the locale may be something minimal like `POSIX`. We test with the following settings. However, it should be fine if you’re using a different UTF-8 supported locale.
 ```
 locale
 ```
@@ -57,11 +58,6 @@ Then add the repository to your sources list
 ```
 echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/ros-archive-keyring.gpg] http://packages.ros.org/ros2/ubuntu $(source /etc/os-release && echo $UBUNTU_CODENAME) main" | sudo tee /etc/apt/sources.list.d/ros2.list > /dev/null
 ```
-
-
-
-
-
 
 
 ### Install ROS 2 packages
